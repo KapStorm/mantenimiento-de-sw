@@ -1,14 +1,14 @@
 package Proyecto;
 
+import Proyecto.entidades.Cliente;
+import Proyecto.entidades.Cuenta;
+
 import java.util.Scanner;
 
-public abstract class Clase_Abstractaa {
-    private static int saldo;
-    protected int transacciones, retiro, deposito, transferencia;
-    String numero_cuenta;
-    Scanner entrada = new Scanner(System.in);
+public class Menu {
+    static Scanner entrada = new Scanner(System.in);
 
-    public void Operaciones() {
+    public static void Operaciones(Cliente cliente) {
         int seleccion = 0;
         do {
             do {
@@ -32,7 +32,7 @@ public abstract class Clase_Abstractaa {
             } while (true);
 
             if (seleccion == 1) {
-                Consulta.Transacciones(null);
+                Consulta.Transacciones(cliente);
             } else if (seleccion == 2) {
                 Clase_Abstractaa mensajero = new Retiro();
                 mensajero.Transacciones();
@@ -50,31 +50,4 @@ public abstract class Clase_Abstractaa {
             }
         } while (true);
     }
-
-    public void Numero_cuenta() {
-        numero_cuenta = entrada.nextLine();
-    }
-
-    public void Retiro() {
-        retiro = entrada.nextInt();
-    }
-
-    public void Deposito() {
-        deposito = entrada.nextInt();
-    }
-
-    public void Transferencia() {
-        transferencia = entrada.nextInt();
-    }
-
-    public abstract void Transacciones();
-
-    public int getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(int saldo) {
-        Clase_Abstractaa.saldo = saldo;
-    }
-
 }

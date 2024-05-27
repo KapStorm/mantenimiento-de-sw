@@ -43,20 +43,15 @@ public class Main {
         if (clienteOptional.isPresent()) {
             Cliente cliente = clienteOptional.get();
             System.out.println("===============================================");
-            System.out.print(Nombre);
-            Clase_Abstractaa mesajero = new Consulta();
-            mesajero.setSaldo(1700);
-            mesajero.Operaciones();
+            System.out.print(cliente.getNombre());
+            Consulta.Transacciones(cliente);
+            Menu.Operaciones(cliente);
         } else {
             System.out.println("===============================================");
             System.out.println("Alguno de sus datos es erroneo, intente denuevo");
             System.out.println("===============================================");
 
         }
-    }
-
-    public String getNombre() {
-        return getNombre();
     }
 }
 
