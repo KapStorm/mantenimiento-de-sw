@@ -1,4 +1,4 @@
-package Proyecto;
+package Proyecto.entidades;
 
 public class Cuenta {
     private Cliente cliente;

@@ -1,4 +1,4 @@
-package Proyecto;
+package Proyecto.entidades;
 
 public class Cliente {
     private String nombre;
