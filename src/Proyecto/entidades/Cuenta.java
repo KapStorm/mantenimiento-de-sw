@@ -1,7 +1,6 @@
 package Proyecto.entidades;
 
 public class Cuenta {
-    private Cliente cliente;
     private TipoCuenta tipoCuenta;
     private Double saldo;
 
@@ -10,18 +9,9 @@ public class Cuenta {
         CUENTA_DE_CHEQUES,
     }
 
-    public Cuenta(Cliente cliente, TipoCuenta tipoCuenta, Double saldo) {
-        this.cliente = cliente;
+    public Cuenta(TipoCuenta tipoCuenta, Double saldo) {
         this.tipoCuenta = tipoCuenta;
         this.saldo = saldo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public TipoCuenta getTipoCuenta() {
