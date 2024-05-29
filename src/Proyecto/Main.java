@@ -38,6 +38,7 @@ public class Main {
         String Nombre = "Catalina";
         Integer Num_cuenta = 1;
         String Nip = "8002";
+        String tipoDeCuenta = "AHORRO";
         Optional<Cliente> clienteOptional = clientes.stream()
                                                     .filter(cliente -> cliente.getNombre()
                                                                               .equals(Nombre) && cliente.getNip()
@@ -47,8 +48,12 @@ public class Main {
         System.out.println("----------------------------------------------------");
         if (clienteOptional.isPresent()) {
             Cliente cliente = clienteOptional.get();
+            if (tipoDeCuenta.equalsIgnoreCase("ahorro")) {
+                cliente.getCuenta().setTipoCuenta(Cuenta.TipoCuenta.CUENTA_DE_AHORRO);
+            } else {
+                cliente.getCuenta().setTipoCuenta(Cuenta.TipoCuenta.CUENTA_DE_CHEQUES);
+            }
             System.out.println("===============================================");
-            System.out.print(cliente.getNombre());
             Menu.Operaciones(cliente, clientes);
         } else {
             System.out.println("===============================================");

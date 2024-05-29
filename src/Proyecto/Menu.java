@@ -3,6 +3,7 @@ package Proyecto;
 import Proyecto.entidades.Cliente;
 import Proyecto.transacciones.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,8 @@ public class Menu {
         do {
             do {
                 System.out.println(" Buenas tardes esta en un cajero automatico de BBVA");
-                System.out.println(" Hoy es 31/10/2023");
+                System.out.println(" Tipo de cuenta: " + cliente.getCuenta().getTipoCuenta().toString());
+                System.out.println(" Hoy es " + LocalDate.now());
                 System.out.println(" Porfavor seleccione una opción:");
                 System.out.println("    1. Proyecto.Consulta de saldo.");
                 System.out.println("    2. Proyecto.Retiro de efectivo.");
