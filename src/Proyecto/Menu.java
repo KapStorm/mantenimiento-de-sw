@@ -19,9 +19,9 @@ public class Menu {
                 System.out.println(" Tipo de cuenta: " + cliente.getCuenta().getTipoCuenta().toString());
                 System.out.println(" Hoy es " + LocalDate.now());
                 System.out.println(" Porfavor seleccione una opción:");
-                System.out.println("    1. Proyecto.Consulta de saldo.");
-                System.out.println("    2. Proyecto.Retiro de efectivo.");
-                System.out.println("    3. Proyecto.Deposito de efectivo.");
+                System.out.println("    1. Consulta de saldo.");
+                System.out.println("    2. Retiro de efectivo.");
+                System.out.println("    3. Deposito de efectivo.");
                 System.out.println("    4. Hacer una transferencia");
                 System.out.println("    5. Salir.");
                 seleccion = entrada.nextInt();

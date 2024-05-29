@@ -29,7 +29,7 @@ public class Retirar implements Transacciones {
         System.out.println("=================" + cliente.getBanco() + "===============");
         System.out.println("=== " + cliente.getLocalizacion() + " ===");
         System.out.println("				Debito				");
-        System.out.println("Se relalizo un retiro el " + java.time.LocalDate.now());
+        System.out.println("Se realizo un retiro el " + java.time.LocalDate.now());
         System.out.println("Tu saldo actual es: " + cliente.getCuenta().getSaldo());
         System.out.println("====================================");
     }

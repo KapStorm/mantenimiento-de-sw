@@ -12,7 +12,7 @@ public class Consultar implements Transacciones {
         System.out.println("=================" + cliente.getBanco() + "===============");
         System.out.println("=== " + cliente.getLocalizacion() + " ===");
         System.out.println("				Debito				");
-        System.out.println("Se relalizo una Proyecto.Consulta el " + LocalDate.now());
+        System.out.println("Se relalizo una Consulta el " + LocalDate.now());
         System.out.println("Tu saldo actual es: " + cliente.getCuenta()
                                                            .getSaldo());
         System.out.println("====================================");

@@ -12,7 +12,7 @@ public class Transferir
     @Override
     public void transaccion(Cliente cliente, List<Cliente> clientes) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("A que cliente deseas transferir: ");
+        System.out.print("A que cliente deseas transferir (2): ");
         Integer id = scanner.nextInt();
 
         if (cliente.getIdentificador()
@@ -56,7 +56,7 @@ public class Transferir
         System.out.println("=================" + cliente.getBanco() + "===============");
         System.out.println("=== " + cliente.getLocalizacion() + " ===");
         System.out.println("				Transferencia				");
-        System.out.println("Se relalizo una transferencia el " + java.time.LocalDate.now());
+        System.out.println("Se realizo una transferencia el " + java.time.LocalDate.now());
         System.out.println("Transferiste " + cantidad + " a " + destino.getNombre() + " " + destino.getIdentificador() + ").");
         System.out.println("Tu saldo actual es: " + cuentaOrigen.getSaldo());
         System.out.println("====================================");

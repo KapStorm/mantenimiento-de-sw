@@ -5,7 +5,6 @@ import Proyecto.entidades.Cuenta;
 import Proyecto.entidades.TarjetaDebito;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -29,29 +28,29 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("----------------------------------------------------");
-//        System.out.println("Ingrese su Nombre:	(Catalina)");
-//        String Nombre = entrada.nextLine();
-//        System.out.println("Ingrese su Identificador:	(1)");
-//        String Num_cuenta = entrada.nextLine();
-//        System.out.println("Ingrese su Nip:		(8002)");
-//        String Nip = entrada.nextLine();
-        String Nombre = "Catalina";
-        Integer Num_cuenta = 1;
-        String Nip = "8002";
-        String tipoDeCuenta = "AHORRO";
+        System.out.println("Ingrese su Nombre:	(Catalina)");
+        String Nombre = entrada.nextLine();
+        System.out.println("Ingrese su Identificador:	(1)");
+        Integer Num_cuenta = Integer.parseInt(entrada.nextLine());
+        System.out.println("Ingrese su Nip:		(8002)");
+        String Nip = entrada.nextLine();
+        System.out.println("Ingrese el tipo de cuenta (ahorro)");
+        String tipoDeCuenta = entrada.nextLine();
         Optional<Cliente> clienteOptional = clientes.stream()
                                                     .filter(cliente -> cliente.getNombre()
                                                                               .equals(Nombre) && cliente.getNip()
-                                                                                                        .equals(Nip) && Objects.equals(cliente.getIdentificador(),
-                                                            Num_cuenta))
+                                                                                                        .equals(Nip) && cliente.getIdentificador()
+                                                                                                                               .equals(Num_cuenta))
                                                     .findFirst();
         System.out.println("----------------------------------------------------");
         if (clienteOptional.isPresent()) {
             Cliente cliente = clienteOptional.get();
             if (tipoDeCuenta.equalsIgnoreCase("ahorro")) {
-                cliente.getCuenta().setTipoCuenta(Cuenta.TipoCuenta.CUENTA_DE_AHORRO);
+                cliente.getCuenta()
+                       .setTipoCuenta(Cuenta.TipoCuenta.CUENTA_DE_AHORRO);
             } else {
-                cliente.getCuenta().setTipoCuenta(Cuenta.TipoCuenta.CUENTA_DE_CHEQUES);
+                cliente.getCuenta()
+                       .setTipoCuenta(Cuenta.TipoCuenta.CUENTA_DE_CHEQUES);
             }
             System.out.println("===============================================");
             Menu.Operaciones(cliente, clientes);
