@@ -49,7 +49,7 @@ public class Main {
             Cliente cliente = clienteOptional.get();
             System.out.println("===============================================");
             System.out.print(cliente.getNombre());
-            Menu.Operaciones(cliente);
+            Menu.Operaciones(cliente, clientes);
         } else {
             System.out.println("===============================================");
             System.out.println("Alguno de sus datos es erroneo, intente denuevo");

@@ -1,15 +1,17 @@
 package Proyecto;
 
 import Proyecto.entidades.Cliente;
-import Proyecto.entidades.Cuenta;
+import Proyecto.transacciones.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
     static Scanner entrada = new Scanner(System.in);
 
-    public static void Operaciones(Cliente cliente) {
+    public static void Operaciones(Cliente cliente, List<Cliente> clientes) {
         int seleccion = 0;
+        Transacciones transaccion = null;
         do {
             do {
                 System.out.println(" Buenas tardes esta en un cajero automatico de BBVA");
@@ -32,22 +34,21 @@ public class Menu {
             } while (true);
 
             if (seleccion == 1) {
-                Consulta.Transacciones(cliente);
+                transaccion = new Consultar();
             } else if (seleccion == 2) {
-                Clase_Abstractaa mensajero = new Retiro();
-                mensajero.Transacciones();
+                transaccion = new Retirar();
             } else if (seleccion == 3) {
-                Clase_Abstractaa mensajero = new Deposito();
-                mensajero.Transacciones();
+                transaccion = new Depositar();
             } else if (seleccion == 4) {
-                Clase_Abstractaa mensajero = new Transferencia();
-                mensajero.Transacciones();
+                transaccion = new Transferir();
             } else {
                 System.out.println("==========================");
                 System.out.println("Gracias, vuelva pronto.");
                 System.out.println("==========================");
                 break;
             }
+
+            transaccion.transaccion(cliente, clientes);
         } while (true);
     }
 }
